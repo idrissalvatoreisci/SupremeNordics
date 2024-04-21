@@ -1,0 +1,201 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Main
+{
++ static void main(String[] args)
+}
+
+class Customer
+{
+- customerID
+- name
+- Age
+- Gender
+- socialSecurityNumber
+- dateOfBirth
+- typeOfCustomer
+}
+
+class Pilot
+{
+- pilotName
+- pilotAge
+- numberOfFlights
+
+}
+
+class Support
+{
++ openingHours
++ fileComplaint()
++ contactSupport()
+}
+
+class Price
+{
+- costOfTicket
+}
+
+class Upgrade
+{
+- seeUpgradeOptions
+- upgradeSeat()
+- upgradeFlight()
+}
+
+class Downgrade
+{
+- downgradeSeat()
+- downgradeFlight()
+}
+
+class UI
+{
++ promptFlight()
+}
+
+class Flight
+{
+- getFlightNumber()
+- getTotalPassengers()
+- getAirlineOfPlane()
+}
+
+class AFlight
+{
++ String flightNumber
++ int getTotalPassengers
++ String airlineOfPlane
++ setFlightNumber()
++ setTotalPassengers()
++ setAirlineOfPlane()
+
+}
+
+class CommercialFlight
+{
+
+}
+
+class PrivateFlight
+{
+
+}
+
+class FirstClassFlight
+{
+
+}
+
+class Seat
+{
+- seatName
+- seatNumber
+- windowSeat
+- Price
+- addCommercialSeat()
+- removeCommercialSeat()
+- addFirstClassSeat()
+- removeFirstClassSeat()
+
+}
+
+class Luggage
+{
+- typeOfLuggage
+- luggageWeight
+- addLuggage()
+- removeLuggage()
+}
+
+class Passenger
+{
+- passengerID
+- passengerName
+- passengerAge
+- addPassenger()
+- removePassenger()
+- movePassenger()
+}
+
+class Date
+{
+- durationOfFlight
+- chooseArrivalDate()
+- chooseDepartureDate()
+- changeArrivalDate()
+- changeDepartureDate()
+
+}
+
+class Destination
+{
+- chooseDestination()
+- changeDestination()
+- removeDestination()
+- addDestination()
+}
+
+class Ticket
+{
+- ticketID
+- expirationDate
+- flightNumber
+- gateNumber
+- typeOfTicket()
+- availableTicket()
+- reservedTicket()
+- detailsOfTicket()
+
+}
+
+class Trip
+{
+- chosenDestination
+- chosenArrivalTime
+- chosenDepartureTime
+
+
+}
+
+class Menu
+{
++ welcomeMessage
+}
+
+class UI2
+{
++ promptSeatUpgrade()
++ promptSeatDowngrade()
++ promptFlightUpgrade()
++ promptFlightDowngrade()
+
+}
+
+class UI3
+{
++ promptDate()
++ promptDestination()
++ promptPassengers()
++ promptLuggage()
+}
+
+Main *-- UI
+UI *-- Flight
+
+Flight *-- AFlight
+AFlight <|-- CommercialFlight
+AFlight <|-- PrivateFlight
+AFlight <|-- FirstClassFlight
+
+UI2 <|-- Upgrade
+UI2 <|-- Downgrade
+
+UI3 *-- Date
+UI3 *-- Destination
+UI3 *-- Luggage
+UI3 *-- Passenger
+
+
+@enduml

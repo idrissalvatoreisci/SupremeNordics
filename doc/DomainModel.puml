@@ -1,0 +1,59 @@
+    @startuml
+'https://plantuml.com/object-diagram
+
+object Customer
+
+object PrivateFlight
+object CommercialFlight
+
+object Ticket
+
+object Destination
+object arrivalDestination
+object departureDestination
+
+object Date
+object arrivalDate
+object departureDate
+
+object Passenger
+
+
+object Seat
+
+
+object Trip
+
+object PrivateTrip
+object FirstClassTrip
+
+object Pilot
+
+object Luggage
+
+object Menu
+object UI1
+object UI2
+
+Customer o-- Menu
+
+Menu <|-- PrivateFlight
+Menu <|-- CommercialFlight
+
+PrivateFlight *-- departureDestination
+PrivateFlight *-- arrivalDestination
+PrivateFlight *-- arrivalDate
+
+CommercialFlight *-- departureDestination
+CommercialFlight *-- arrivalDestination
+CommercialFlight *-- arrivalDate
+
+
+
+
+
+
+
+
+
+@enduml
